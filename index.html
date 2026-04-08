@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emmanouil Pyrgiotakis — Finance</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid #B5D4F4; position: sticky; top: 0; background: #042C53; z-index: 10; }
+nav .name { font-size: 15px; font-weight: 500; color: #fff; }
+nav .links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+nav .links a { font-size: 13px; color: #B5D4F4; text-decoration: none; cursor: pointer; }
+nav .links a:hover { color: #fff; }
+section { padding: 2.5rem 2rem; border-bottom: 1px solid #e8f0fb; max-width: 820px; margin: 0 auto; }
+.hero { display: flex; gap: 2rem; align-items: flex-start; }
+.profile-pic { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0; border: 3px solid #378ADD; }
+.hero-text h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; color: #1a1a1a; }
+.hero-text .title { font-size: 13px; color: #185FA5; margin-bottom: 12px; line-height: 1.6; font-weight: 500; }
+.hero-text p { font-size: 14px; line-height: 1.7; color: #555; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tag { font-size: 12px; padding: 4px 10px; border-radius: 6px; background: #E6F1FB; color: #0C447C; }
+.contact-row { display: flex; gap: 0.75rem; margin-top: 14px; flex-wrap: wrap; align-items: center; }
+.contact-row a { font-size: 13px; color: #185FA5; text-decoration: none; }
+.btn { font-size: 12px; padding: 5px 12px; border-radius: 6px; background: #185FA5; color: #fff !important; text-decoration: none; font-weight: 500; }
+.btn:hover { background: #0C447C; }
+h2 { font-size: 18px; font-weight: 500; margin-bottom: 1.5rem; color: #1a1a1a; padding-bottom: 0.5rem; border-bottom: 2px solid #378ADD; display: inline-block; }
+.section-label { font-size: 11px; font-weight: 500; color: #185FA5; text-transform: uppercase; letter-spacing: 0.08em; margin: 1.5rem 0 0.75rem; }
+.pub { padding: 0.875rem 0; border-bottom: 1px solid #e8f0fb; }
+.pub:last-child { border-bottom: none; }
+.pub .journal { font-size: 12px; color: #185FA5; font-weight: 500; margin-bottom: 4px; }
+.pub .pub-title { font-size: 14px; font-weight: 500; margin-bottom: 6px; line-height: 1.5; color: #1a1a1a; }
+.pub .pub-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pub a.paper-link { font-size: 12px; color: #185FA5; text-decoration: none; }
+.pub a.paper-link:hover { text-decoration: underline; }
+.badge { font-size: 11px; padding: 3px 8px; border-radius: 6px; font-weight: 500; }
+.badge.rnr { background: #FAEEDA; color: #854F0B; }
+.badge.wp { background: #E1F5EE; color: #0F6E56; }
+.positions { display: flex; flex-direction: column; gap: 1rem; }
+.pos { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: 0.875rem; background: #E6F1FB; border-radius: 8px; }
+.pos-left .role { font-size: 14px; font-weight: 500; color: #0C447C; }
+.pos-left .inst { font-size: 13px; color: #185FA5; margin-top: 2px; }
+.pos-left .desc { font-size: 13px; color: #555; margin-top: 4px; line-height: 1.5; }
+.pos .dates { font-size: 12px; color: #185FA5; white-space: nowrap; flex-shrink: 0; font-weight: 500; }
+.courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.course-card { background: #E6F1FB; border-radius: 8px; padding: 0.875rem 1rem; border-left: 3px solid #378ADD; }
+.course-card .level { font-size: 11px; color: #185FA5; margin-bottom: 4px; font-weight: 500; }
+.course-card .cname { font-size: 13px; font-weight: 500; color: #0C447C; }
+.skills { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill { font-size: 12px; padding: 4px 10px; border-radius: 6px; border: 1px solid #378ADD; color: #185FA5; background: #E6F1FB; }
+.hobbies { display: flex; flex-wrap: wrap; gap: 8px; }
+.hobby { font-size: 13px; padding: 6px 14px; border-radius: 8px; background: #E6F1FB; color: #0C447C; }
+.about-inner { display: flex; gap: 1.5rem; align-items: flex-start; }
+.conf-pic { width: 100%; max-width: 360px; border-radius: 12px; object-fit: cover; border: 1px solid #B5D4F4; }
+footer { text-align: center; padding: 2rem; font-size: 12px; color: #fff; background: #042C53; margin-top: 0; }
+@media (max-width: 600px) {
+  .hero { flex-direction: column; }
+  .about-inner { flex-direction: column; }
+  nav { flex-direction: column; gap: 0.75rem; }
+  .pos { flex-direction: column; }
+  .pos .dates { margin-top: 4px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="name">Emmanouil Pyrgiotakis</span>
+  <div class="links">
+    <a href="#research">Research</a>
+    <a href="#positions">CV</a>
+    <a href="#consulting">Consulting</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#personal">About</a>
+  </div>
+</nav>
+
+<section>
+  <div class="hero">
+    <img src="manos_3.JPG" class="profile-pic" alt="Emmanouil Pyrgiotakis" />
+    <div class="hero-text">
+      <h1>Emmanouil Pyrgiotakis</h1>
+      <p class="title">Ad Astra Assistant Professor of Finance &middot; University College Dublin &nbsp;&middot;&nbsp; Visiting Fellow &middot; University of Essex</p>
+      <p>My research focuses on mergers and acquisitions, financial markets, and sustainable finance &mdash; an area of growing interest in my work. I am currently an Ad Astra Assistant Professor of Finance at University College Dublin, Ireland, and a Visiting Fellow at the University of Essex, United Kingdom.</p>
+      <div class="tags">
+        <span class="tag">Mergers &amp; Acquisitions</span>
+        <span class="tag">Financial Markets</span>
+        <span class="tag">Sustainable Finance</span>
+        <span class="tag">Banking</span>
+        <span class="tag">Crash Risk</span>
+        <span class="tag">Text-Based Analytics</span>
+      </div>
+      <div class="contact-row">
+        <a href="mailto:e.pyrgiotakis@ucd.ie">e.pyrgiotakis@ucd.ie</a>
+        <a href="https://scholar.google.com/citations?user=k4zWQzcAAAAJ&hl=en&oi=ao" class="btn" target="_blank">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/emmanouil-g-pyrgiotakis-aa773a53/" class="btn" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <h2>Research</h2>
+  <div class="section-label">Published papers</div>
+  <div class="pub"><div class="journal">Journal of Financial Stability &middot; 2026</div><div class="pub-title">Social capital and stock price crash risk: cross-country evidence</div><div class="pub-meta"><a href="https://www.sciencedirect.com/science/article/abs/pii/S157230892600001X" class="paper-link" target="_blank">View paper &rarr;</a></div></div>
+  <div class="pub"><div class="journal">Journal of International Money and Finance &middot; 2025</div><div class="pub-title">Climate exposure &amp; green bond issuance</div><div class="pub-meta"><a href="https://www.sciencedirect.com/science/article/pii/S0261560625000166" class="paper-link" target="_blank">View paper &rarr;</a></div></div>
+  <div class="pub"><div class="journal">Journal of Banking &amp; Finance &middot; 2025</div><div class="pub-title">National culture of secrecy &amp; synchronicity</div><div class="pub-meta"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0378426624002553" class="paper-link" target="_blank">View paper &rarr;</a></div></div>
+  <div class="pub"><div class="journal">British Journal of Management &middot; 2024</div><div class="pub-title">Bank competition, loan concentration &amp; crash risk; tone ambiguity</div><div class="pub-meta"><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/1467-8551.12850" class="paper-link" target="_blank">View paper &rarr;</a></div></div>
+  <div class="pub"><div class="journal">Journal of Financial Stability &middot; 2024</div><div class="pub-title">Firm political risk &amp; stock price crashes</div><div class="pub-meta"><a href="https://www.sciencedirect.com/science/article/pii/S1572308924000883" class="paper-link" target="_blank">View paper &rarr;</a></div></div>
+  <div class="pub"><div class="journal">European Journal of Operational Research &middot; 2024</div><div class="pub-title">Text-based machine learning for bank merger prediction</div><div class="pub-meta"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0377221723005982" class="paper-link" target="_blank">View paper &rarr;</a></div></div>
+  <div class="pub"><div class="journal">Journal of Banking &amp; Finance &middot; 2022</div><div class="pub-title">US bank M&amp;As post&ndash;Dodd&ndash;Frank: value creation</div><div class="pub-meta"><a href="https://www.sciencedirect.com/science/article/abs/pii/S037842661930144X" class="paper-link" target="_blank">View paper &rarr;</a></div></div>
+  <div class="section-label">Under review</div>
+  <div class="pub"><div class="journal">British Journal of Management</div><div class="pub-title">High-frequency trading and stock price crash risk</div><div class="pub-meta"><span class="badge rnr">R&amp;R</span></div></div>
+  <div class="section-label">Working papers</div>
+  <div class="pub"><div class="pub-title">The carbon footprint of green bonds: a project-level analysis</div><div class="pub-meta"><span class="badge wp">Working paper</span><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5578310" class="paper-link" target="_blank">SSRN &rarr;</a></div></div>
+</section>
+
+<section id="positions">
+  <h2>Academic positions</h2>
+  <div class="positions">
+    <div class="pos"><div class="pos-left"><div class="role">Ad Astra Assistant Professor of Finance</div><div class="inst">University College Dublin, Ireland</div></div><div class="dates">Dec 2025 &ndash; present</div></div>
+    <div class="pos"><div class="pos-left"><div class="role">Visiting Fellow</div><div class="inst">University of Essex, United Kingdom</div></div><div class="dates">Jan 2026 &ndash; present</div></div>
+    <div class="pos"><div class="pos-left"><div class="role">Assistant Professor of Finance (Tenured)</div><div class="inst">University of Essex, United Kingdom</div></div><div class="dates">Jan 2020 &ndash; Dec 2025</div></div>
+    <div class="pos"><div class="pos-left"><div class="role">Adjunct Professor</div><div class="inst">Ca&rsquo; Foscari University of Venice, Italy</div></div><div class="dates">Sep 2022 &ndash; Jan 2023</div></div>
+  </div>
+</section>
+
+<section id="consulting">
+  <h2>Professional &amp; consulting</h2>
+  <div class="positions">
+    <div class="pos"><div class="pos-left"><div class="role">Financial Lead (CFO-equivalent) &middot; Kyklos HealthTech</div><div class="inst">United Kingdom</div><div class="desc">HealthTech start-up supported by Horizon Europe funding. Built valuation models, unit economics, and cash-flow forecasts; led market and competitive analysis and investor-ready reporting.</div></div><div class="dates">Aug 2024 &ndash; present</div></div>
+    <div class="pos"><div class="pos-left"><div class="role">Financial Consultant &middot; PwC Greece</div><div class="inst">Zombie Firms Project</div><div class="desc">Developed firm-level predictive diagnostics to identify financially distressed firms. Produced econometric evidence and policy recommendations for credit-risk monitoring.</div></div><div class="dates">Sep 2024 &ndash; Jun 2025</div></div>
+    <div class="pos"><div class="pos-left"><div class="role">Scientific Consultant &middot; EU LIFE Project</div><div class="inst">Renewable Energy Communities (RECs)</div><div class="desc">Conducted REC valuations across three Mediterranean islands, developed funding plans, and authored investment guidance for local stakeholders.</div></div><div class="dates">Aug 2024 &ndash; Sep 2025</div></div>
+  </div>
+</section>
+
+<section id="teaching">
+  <h2>Teaching</h2>
+  <div class="courses">
+    <div class="course-card"><div class="level">Undergraduate</div><div class="cname">Portfolio Analysis</div></div>
+    <div class="course-card"><div class="level">Undergraduate</div><div class="cname">Risk Management &amp; Financial Institutions</div></div>
+    <div class="course-card"><div class="level">Undergraduate</div><div class="cname">Treasury and Risk Management</div></div>
+    <div class="course-card"><div class="level">Postgraduate</div><div class="cname">Risk Management</div></div>
+    <div class="course-card"><div class="level">Postgraduate</div><div class="cname">Fixed Income Securities</div></div>
+    <div class="course-card"><div class="level">Postgraduate</div><div class="cname">Financial Policies &amp; Investment Strategies</div></div>
+    <div class="course-card"><div class="level">Postgraduate</div><div class="cname">Private Equity and Startup Finance</div></div>
+  </div>
+  <p style="font-size:13px;color:#555;margin-top:1rem;">Average teaching evaluation: 4.4 / 5 &middot; Fellow of the Higher Education Academy (D2)</p>
+  <div style="margin-top:2rem;">
+    <h2>Technical skills</h2>
+    <div class="skills">
+      <span class="skill">Stata</span><span class="skill">R</span><span class="skill">Python</span><span class="skill">Claude Code</span><span class="skill">Bloomberg</span><span class="skill">WRDS</span><span class="skill">Refinitiv</span><span class="skill">Orbis</span>
+    </div>
+  </div>
+</section>
+
+<section id="personal">
+  <h2>About</h2>
+  <div class="about-inner">
+    <div style="flex:1;">
+      <p style="font-size:14px;line-height:1.7;color:#555;margin-bottom:1.25rem;">Outside of research, I am an active investor building my own strategies, an avid reader of non-fiction and soft science, and enjoy cooking and going to the gym.</p>
+      <div class="hobbies">
+        <span class="hobby">Active investing</span>
+        <span class="hobby">Non-fiction reading</span>
+        <span class="hobby">Cooking</span>
+        <span class="hobby">Gym</span>
+      </div>
+    </div>
+    <img src="manos_pic.jpg" class="conf-pic" alt="Presenting at a conference" />
+  </div>
+</section>
+
+<footer>
+  Emmanouil Pyrgiotakis &middot; University College Dublin &middot; e.pyrgiotakis@ucd.ie
+</footer>
+
+</body>
+</html>
